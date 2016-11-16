@@ -1,0 +1,53 @@
+<div class="row "  >
+      <div class="col-md-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title"> <strong>{{course.course_name}}</strong> </h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" name="tdFormCourse" novalidate>
+              <div class="box-body">
+                <div class="form-group" ng-class="{'has-error':tdFormCourse.course.$invalid && tdFormCourse.course.$dirty,'':tdFormCourse.course.$pristine, 'has-success':tdFormCourse.course.$valid}">
+                  <label for="exampleInputEmail1">Course Name</label>
+                  <input type="hidden" ng-model="course.course_id" value="{{course.course_id}}">
+                  <input type="text" class="form-control" name="course" placeholder="Course Name" ng-model="course.course_name" required>
+                </div>
+                <div class="form-group" ng-class="{'has-error':tdFormCourse.code.$invalid && tdFormCourse.code.$dirty,'':tdFormCourse.code.$pristine, 'has-success':tdFormCourse.code.$valid}" >
+                  <label for="exampleInputEmail1">Course Code</label>
+                  <input type="text" class="form-control" name="code" placeholder="Course Code"  ng-model="course.course_code" required>
+                </div>
+                <div class="form-group" ng-class="{'has-error':tdFormCourse.alias.$invalid && tdFormCourse.alias.$dirty,'':tdFormCourse.alias.$pristine, 'has-success':tdFormCourse.alias.$valid}">
+                  <label for="exampleInputEmail1">Course Alias</label>
+                  <input type="text" class="form-control" name="alias" placeholder="Course Alias"  ng-model="course.course_alias" required>
+                </div>
+                <div class="form-group" ng-class="{'has-error':tdFormCourse.image.$invalid && tdFormCourse.image.$dirty,'':tdFormCourse.image.$pristine, 'has-success':tdFormCourse.image.$valid}">
+                  <label for="exampleInputEmail1">Image</label>
+                  <input type="text" class="form-control" name="image" placeholder="Image"  ng-model="course.image" required>
+                </div>
+                <div class="form-group" ng-class="{'has-error':tdFormCourse.course_overview.$invalid && tdFormCourse.course_overview.$dirty,'':tdFormCourse.course_overview.$pristine, 'has-success':tdFormCourse.course_overview.$valid}">
+                  <label for="exampleInputEmail1">Course Overview</label>
+                  <input type="text" class="form-control" name="course_overview" placeholder="Course Alias" ckeditor="options" ckeditor="options" ng-model="course.course_overview" ready="onReady()" required>
+                </div>
+                <div class="form-group" ng-class="{'has-error':tdFormCourse.course_curriculam.$invalid && tdFormCourse.course_curriculam.$dirty,'':tdFormCourse.course_curriculam.$pristine, 'has-success':tdFormCourse.course_curriculam.$valid}">
+                  <label for="exampleInputEmail1">Course Curriculum</label>
+                  <input type="text" class="form-control" name="course_curriculam" placeholder="Course Curriculum" ckeditor="options" ng-model="course.course_curriculam" ready="onReady()" required>
+                </div>
+                <div class="form-group" ng-class="{'has-error':tdFormCourse.duration.$invalid && tdFormCourse.duration.$dirty,'':tdFormCourse.duration.$pristine, 'has-success':tdFormCourse.duration.$valid}">
+                  <label for="exampleInputEmail1">Duration</label>
+                  <input type="text" class="form-control" name="duration" placeholder="Course Duration" ng-model="course.duration" required>
+                </div>
+                
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer" ng-if="tdFormCourse.$valid">
+                <button type="submit" ng-if="!course.course_id" class="btn btn-primary" ng-click="addCourse(course)">Add Course</button>
+                <button type="submit" ng-if="course.course_id" class="btn btn-primary" ng-click="updatedCourse(course)">Update Course</button>
+              </div>
+            </form>
+          </div>
+      </div>
+  </div>
+
+

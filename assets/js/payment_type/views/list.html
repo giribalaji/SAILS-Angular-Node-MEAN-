@@ -1,0 +1,83 @@
+<div class="row ">
+    <div class="col-md-12">
+        <div class="panel panel-default ">
+            <div class="panel-heading">
+                <i class="fa fa-th-list fa-fw"></i> Payment Type List
+            </div>
+            <!-- /.panel-heading -->
+            <div class="box">
+                <div class="box-header">
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body ">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Account No</th>
+                                <th>Branch</th>
+                                <th>Created At</th>
+                                <th>Updated At</th>
+                            </tr>
+                            <tr ng-repeat="method in paymentTypes">
+                                <td>{{$index+1}}</td>
+                                <td>{{method.title}}</td>
+                                <td>{{method.account_no}}</td>
+                                <td>{{method.branch}}</td>
+                                <td>{{method.createdAt}}</td>
+                                <td>{{method.updatedAt}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="panel panel-default ">
+            <div class="panel-heading">
+                <i class="fa fa-plus fa-fw"></i> Add Payment Method
+            </div>
+            <!-- /.panel-heading -->
+            <div class="box">
+                <div class="box-header">
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body ">
+                  <form role="form" name="tdFormPaymentType" novalidate>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group" ng-class="{'has-error':tdFormPaymentType.title.$invalid && tdFormPaymentType.title.$dirty,'':tdFormPaymentType.title.$pristine, 'has-success':tdFormPaymentType.title.$valid}">
+                                <input type="text" class="form-control" name="title" placeholder="Title" ng-model="paymentType.title" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" ng-class="{'has-error':tdFormPaymentType.account_no.$invalid && tdFormPaymentType.account_no.$dirty,'':tdFormPaymentType.account_no.$pristine, 'has-success':tdFormPaymentType.account_no.$valid}">
+                                <input type="text" class="form-control" name="account_no"  placeholder="Account No" ng-model="paymentType.account_no" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" ng-class="{'has-error':tdFormPaymentType.branch.$invalid && tdFormPaymentType.branch.$dirty,'':tdFormPaymentType.branch.$pristine, 'has-success':tdFormPaymentType.branch.$valid}">
+                                <input type="text" class="form-control" name="branch" placeholder="Branch" ng-model="paymentType.branch" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                          <!-- /.box-body -->
+                            <div class="form-group" >
+                               <button type="submit" ng-disabled="!tdFormPaymentType.$valid" class="btn btn-primary " ng-click="addPaymentType(paymentType)">Add Batch</button>
+                            </div>
+                        </div>
+                    </div>
+
+                  </form>
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+</div>
+</div>

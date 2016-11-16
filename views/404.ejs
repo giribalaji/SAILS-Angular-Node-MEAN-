@@ -1,0 +1,14 @@
+<section id="error" class="container text-center">
+  <h1>
+    Something's fishy here.
+  </h1>
+  <h2>
+    <% if (typeof error!== 'undefined') { %>
+    <%= error %>
+    <% } else { %>
+    The page you were trying to reach doesn't exist.
+    <% } %>
+  </h2>
+
+  <a class="btn btn-primary" href="index.html">GO BACK TO THE HOMEPAGE</a>
+</section>

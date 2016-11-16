@@ -1,0 +1,25 @@
+<div class="row "  >
+      <div class="col-md-12">
+      	<div class="panel panel-default ">
+            <div class="panel-heading">
+                <i class="fa fa-th-list fa-fw"></i> Listed Course
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive"> 
+                 <table ng-repeat="(key, course) in courseList" bs-table-control="course.bsTableControl" class="table table-no-bordered">
+                  <thead>
+                    <tr>
+                      <th data-field="course_name" data-sortable="true" data-width="120px">Course Name</th> 
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr></tr>
+                  </tbody>
+                </table>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+      </div>
+</div>

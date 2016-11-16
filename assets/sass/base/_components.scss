@@ -1,0 +1,13 @@
+.navbar-default {
+  border-color: $dark-green
+}
+.navbar-static-top {
+  background-color: $green;
+  border-radius: 0;
+}
+.navbar-default .navbar-brand{
+	color: $white;
+	&:hover{
+		color: $white;
+	}
+}

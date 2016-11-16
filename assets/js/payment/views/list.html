@@ -1,0 +1,25 @@
+<div class="row "  >
+      <div class="col-md-12">
+        <div class="panel panel-default ">
+            <div class="panel-heading">
+                <i class="fa fa-th-list fa-fw"></i> Listed payments
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive"> 
+                 <table ng-repeat="(key, pay) in paymentsList" bs-table-control="pay.bsTableControl" >
+                  <thead>
+                    <tr>
+                      <th data-field="firstname" data-sortable="true" data-width="120px">First Name</th> 
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr></tr>
+                  </tbody>
+                </table>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+      </div>
+</div>

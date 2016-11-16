@@ -1,0 +1,13 @@
+$arial-rounded-bold : ArialRoundedMTBold;
+
+@font-face {
+  font-family: $arial-rounded-bold;
+  src: url('../fonts/ArialRoundedMTBoldBold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ArialRoundedMTBoldBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/ArialRoundedMTBoldBold.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/ArialRoundedMTBoldBold.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/ArialRoundedMTBoldBold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/ArialRoundedMTBoldBold.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
+

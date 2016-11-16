@@ -1,0 +1,10 @@
+SET FOREIGN_KEY_CHECKS = 0;
+TRUNCATE batch;
+TRUNCATE courses;
+TRUNCATE fee_details;
+TRUNCATE payment_method;
+TRUNCATE payment_transaction;
+TRUNCATE payment_type;
+TRUNCATE student;
+TRUNCATE student_info;
+SET FOREIGN_KEY_CHECKS = 1;

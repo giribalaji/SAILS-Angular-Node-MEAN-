@@ -1,0 +1,116 @@
+{
+   "nav_left":[
+      {
+         "url":"#/",
+         "label":"Dashboard",
+         "status":"true",
+         "icon":"fa fa-home"
+      },
+      {
+         "url":"#",
+         "label":"Course",
+         "status":"true",
+         "icon":"fa fa-book",
+         "child":[
+            {
+               "url":"#/course",
+               "label":" Manage Course",
+               "status":"true",
+               "icon":"fa fa-th-large"
+            },
+            {
+               "url":"#/course/add",
+               "label":" Add Course",
+               "status":"true",
+               "icon":"fa fa-th-large"
+            }
+         ]
+      },
+      {
+         "url":"#",
+         "label":"Batch",
+         "status":"true",
+         "icon":"fa fa-bookmark-o",
+         "child":[
+            {
+               "url":"#/batch",
+               "label":" Manage Batch",
+               "status":"true",
+               "icon":"fa fa-th-large"
+            },
+            {
+               "url":"#/batch/add",
+               "label":" Add Batch",
+               "status":"true",
+               "icon":"fa fa-th-large"
+            }
+         ]
+      },
+      {
+         "url":"#",
+         "label":"Student",
+         "status":"true",
+         "icon":"fa fa-graduation-cap",
+         "child":[         
+            {
+               "url":"#/student",
+               "label":" Manage Students",
+               "status":"true",
+               "icon":"fa fa-th-large"
+            },
+            {
+               "url":"#/student/add",
+               "label":" Add Student",
+               "status":"true",
+               "icon":"fa fa-th-large"
+            }
+         ]
+      },
+      {
+         "url":"#",
+         "label":"Payment",
+         "status":"true",
+         "icon":"fa fa-inr",
+         "child":[
+            {
+               "url":"#/payment",
+               "label":" Payment Transaction",
+               "status":"true",
+               "icon":"fa fa-th-large"
+            },
+            {
+               "url":"#/paymentType",
+               "label":" Payment Type",
+               "status":"true",
+               "icon":"fa fa-th-large"
+            },
+            {
+               "url":"#/paymentMethod",
+               "label":" Payment Method",
+               "status":"true",
+               "icon":"fa fa-th-large"
+            } 
+         ]
+      },
+      {
+         "url":"#",
+         "label":"Users",
+         "status":"true",
+         "icon":"fa fa-users",
+         "child":[
+            {
+               "url":"#/users",
+               "label":" Manage Users",
+               "status":"true",
+               "icon":"fa fa-th-large"
+            },
+            {
+               "url":"#/users/add",
+               "label":" Add Users",
+               "status":"true",
+               "icon":"fa fa-th-large"
+            }
+         ]
+      }
+   ]
+}

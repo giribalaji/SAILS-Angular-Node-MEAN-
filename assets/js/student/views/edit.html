@@ -1,0 +1,169 @@
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+            <div class="nav-tabs-custom">
+                
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#personal" data-toggle="tab">Personal Information</a></li>
+                    <li><a href="#course" data-toggle="tab">Course</a></li>
+                    <li><a href="#Fee" data-toggle="tab">Fee</a></li>
+                </ul>
+                <form name="tdFormStudent" novalidate>
+                <div class="tab-content">
+                
+                    <div class="active tab-pane" id="personal">
+                        <div class="box-body">
+                           
+                            <div class="row">
+                                <div class="col-md-4">                              
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.stu_first_name.$invalid && tdFormStudent.stu_first_name.$dirty,'':tdFormStudent.stu_first_name.$pristine, 'has-success':tdFormStudent.stu_first_name.$valid}">
+                                        <label >First Name</label>
+                                        <input type="text" class="form-control"  required placeholder="Jhon" ng-model="student.profile.stu_first_name" name="stu_first_name">
+                                    </div>                                   
+                                </div>
+                                <div class="col-md-4">                              
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.stu_middle_name.$invalid && tdFormStudent.stu_middle_name.$dirty,'':tdFormStudent.stu_middle_name.$pristine, 'has-success':tdFormStudent.stu_middle_name.$valid}">
+                                        <label >Middle Name</label>
+                                        <input type="text" class="form-control" required placeholder="Doe" ng-model="student.profile.stu_middle_name" name="stu_middle_name">
+                                    </div>                                   
+                                </div>
+                                <div class="col-md-4">                              
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.stu_last_name.$invalid && tdFormStudent.stu_last_name.$dirty,'':tdFormStudent.stu_last_name.$pristine, 'has-success':tdFormStudent.stu_last_name.$valid}">
+                                        <label >Last Name</label>
+                                        <input type="text" class="form-control"   placeholder="Kr" ng-model="student.profile.stu_last_name" name="stu_last_name">
+                                    </div>                                   
+                                </div>                                
+                                <div class="col-md-6">                              
+                                    <!-- Date mm/dd/yyyy -->
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.stu_dob.$invalid && tdFormStudent.stu_dob.$dirty,'':tdFormStudent.stu_dob.$pristine, 'has-success':tdFormStudent.stu_dob.$valid}">
+                                        <label>Date of birth</label>
+                                        <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" class="form-control" required data-inputmask="'alias': 'yyyy-mm-dd'" data-mask ng-model="student.profile.stu_dob" name="stu_dob">
+                                        </div>
+                                        <!-- /.input group -->
+                                    </div>                                   
+                                </div>
+                                <div class="col-md-6">                              
+                                    <!-- phone mask -->
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.stu_mobile_no.$invalid && tdFormStudent.stu_mobile_no.$dirty,'':tdFormStudent.stu_mobile_no.$pristine, 'has-success':tdFormStudent.stu_mobile_no.$valid}">
+                                        <label>Phone Number</label>
+
+                                        <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <input type="text" class="form-control" required data-inputmask='"mask": "(999) 999-9999"' data-mask ng-model="student.profile.stu_mobile_no" name="stu_mobile_no">
+                                        </div>
+                                        <!-- /.input group -->                                 
+                                    </div>                                   
+                                </div>
+                                <div class="col-md-6">                              
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.stu_email_id.$invalid && tdFormStudent.stu_email_id.$dirty,'':tdFormStudent.stu_email_id.$pristine, 'has-success':tdFormStudent.stu_email_id.$valid}">
+                                        <label >Email</label>
+                                        <input type="email" class="form-control" required placeholder="me@email.com" ng-model="student.profile.stu_email_id" name="stu_email_id">
+                                    </div>                                   
+                                </div>
+                                
+                                <div class="col-md-6">                              
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.country.$invalid && tdFormStudent.country.$dirty,'':tdFormStudent.country.$pristine, 'has-success':tdFormStudent.country.$valid}">
+                                        <label >Country</label>
+                                        <input type="text" class="form-control" required placeholder="India" ng-model="student.profile.country" name="country">
+                                    </div>                                   
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.stu_gender.$invalid && tdFormStudent.stu_gender.$dirty,'':tdFormStudent.stu_gender.$pristine, 'has-success':tdFormStudent.stu_gender.$valid}">
+                                        <label >Gender</label>
+                                        <select id="mySelect"  class="form-control"  ng-model="student.profile.stu_gender" required name="stu_gender">
+                                            <option value="">Select Gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>                                      
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="course">
+                        <div class="box-body">
+                            <div class="row">
+                                        
+                                
+                                <div class="col-md-6">                              
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.course.$invalid && tdFormStudent.course.$dirty,'':tdFormStudent.course.$pristine, 'has-success':tdFormStudent.course.$valid}">
+                                        <label for="exampleInputEmail1">Course</label>
+                                        <select   class="form-control" ng-options="option.course_id as  option.course_name for option in courses" ng-model="student.course.course_id" name="course">
+                                            <option value="">Select Course</option>
+                                            <option value="new-course">New Course</option>
+                                        </select>                                    
+                                    </div>                                   
+                                </div>
+                                <div class="col-md-6">                              
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.batch.$invalid && tdFormStudent.batch.$dirty,'':tdFormStudent.batch.$pristine, 'has-success':tdFormStudent.batch.$valid}">
+                                        <label for="exampleInputEmail1">Batch</label>
+                                        <select    class="form-control" ng-options="option.id as  option.title  for option in batches" ng-model="student.batch.id" name="batch">
+                                            <option value="">Select Batch</option>
+                                            <option value="new-batch">New Batch</option>
+                                        </select>                                    
+                                    </div>                                  
+                                </div>
+                                <div class="col-md-12">                              
+                                    <!-- Date mm/dd/yyyy -->
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.stu_admission_date.$invalid && tdFormStudent.stu_admission_date.$dirty,'':tdFormStudent.stu_admission_date.$pristine, 'has-success':tdFormStudent.stu_admission_date.$valid}">
+                                        <label>Admission Date</label>
+                                        <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask ng-model="student.profile.stu_admission_date" name="stu_admission_date">
+                                        </div>
+                                        <!-- /.input group -->
+                                    </div>                                   
+                                </div>
+                               
+                            </div>   
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="Fee">
+                        <div class="box-body">
+                            <div class="row">
+                                
+                                <div class="col-md-6">                              
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.fee_description.$invalid && tdFormStudent.fee_description.$dirty,'':tdFormStudent.fee_description.$pristine, 'has-success':tdFormStudent.fee_description.$valid}">
+                                        <label >Fee Description</label>
+                                        <input type="text" class="form-control"  placeholder="Training Fee" ng-model="student.fee_details.fee_description" required name="fee_description">
+                                    </div>                                   
+                                </div>                                
+                                <div class="col-md-6">                              
+                                    <div class="form-group" ng-class="{'has-error':tdFormStudent.fee_total.$invalid && tdFormStudent.fee_total.$dirty,'':tdFormStudent.fee_total.$pristine, 'has-success':tdFormStudent.fee_total.$valid}">
+                                        <label >Fee Total</label>
+                                        <input type="text" class="form-control"  placeholder="India" ng-model="student.fee_details.fee_total" required name="fee_total">
+                                    </div>                                   
+                                </div>
+                                
+                            </div>  
+                        </div>
+                    </div>
+                                                             
+
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+                
+                 <!-- /.box-body -->
+                <div class="box-footer" ng-if="tdFormStudent.$valid">
+                    <button type="submit" ng-if="!student.id" class="btn btn-primary" ng-click="addStudent(student)">Add Student</button>
+                    <button type="submit" ng-if="student.id" class="btn btn-primary" ng-click="updatedStudent(student)">Update Student</button>
+                </div>
+                </form>     
+            </div>
+        </div>
+        <!--/.col -->
+    </div>
+    <!-- /.row -->    
+</section>
+<!-- /.content -->

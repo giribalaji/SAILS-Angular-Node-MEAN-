@@ -1,0 +1,51 @@
+<div class="user-details">
+	<div class="row">
+      <div class="col-12 ">
+      	  <section class="profile">
+	          <div class="profile-image">
+	          	<img src="{{user.image_url}}">
+	          </div>
+	          <div class="profile-info">
+	          	<div class="profile-name">{{user.first_name}} {{user.last_name}}</div>
+	          	<div class="profile-designation">{{user.designation}}</div>
+	          	<div class="profile-company">{{user.company}}</div>
+	          	<div class="profile-social">
+	          		<ul>
+	          			<li><a href=""><img src="assets/twitter.png"></a></li>
+	          			<li><a href=""><img src="assets/dribbble.png"></a></li>
+	          			<li><a href=""><img src="assets/behance.png"></a></li>
+	          			<li><a href=""><img src="assets/codepen.png"></a></li>
+	          		</ul>
+	          	</div>
+	          </div>
+	      </section>
+	      <section class="summary">
+	      	<h2 class="icon-header">Summary</h2>
+	      	<p>
+	      		Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac erat suscipit, faucibus arcu et, pellentesque neque. Cras tempus nisi sit amet interdum interdum. Donec congue sed massa a pulvinar. Nulla sit amet urna eget justo varius dictum. Etiam neque quam, ornare a enim pellentesque, volutpat finibus risus. Ut scelerisque augue in laoreet convallis. Suspendisse in varius nisi, sit amet sodales ante. Quisque eget dolor tellus.
+	      	</p>
+	      </section>
+	      <section class="current-experience">
+	      	<h2 class="icon-header">Current Experience</h2>
+	      	<h3>{{user.designation}}</h3>
+	      	<h4 class="subhead">{{user.company}}</h4>
+	      	<p>
+	      		Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac erat suscipit, faucibus arcu et, pellentesque neque. Cras tempus nisi sit amet interdum interdum. Donec congue sed massa a pulvinar. Nulla sit amet urna eget justo varius dictum. Etiam neque quam, ornare a enim pellentesque, volutpat finibus risus. Ut scelerisque augue in laoreet convallis. Suspendisse in varius nisi, sit amet sodales ante. Quisque eget dolor tellus.
+	      	</p>
+	      </section>
+	      <section class="skills">
+	      	<h2 class="icon-header">Skills</h2>
+	      	<div class="skills-list">
+	      		<span ng-repeat="skill in user.skills" class="skill"><span class="count">{{skill.count}}</span> {{skill.name}}</span>
+	      	</div>
+	      	<h3>Add More Skills</h3>
+      		<div class="add-skills">
+      			<span ng-repeat="skill in user.newskills" class="skill">
+      				<span class="count">{{skill.count}}</span> {{skill.name}}
+      			</span>
+      		</div>
+	      </section>
+	      
+      </div>
+	</div>
+</div>

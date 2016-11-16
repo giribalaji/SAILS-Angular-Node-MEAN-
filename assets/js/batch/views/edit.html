@@ -1,0 +1,92 @@
+<div class="row ">
+  <div class="col-md-12">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title"> <strong ng-if="batch.title">{{batch.title}}</strong> </h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form role="form" name="tdFormBatch" novalidate>
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group" ng-class="{'has-error':tdFormBatch.title.$invalid && tdFormBatch.title.$dirty,'':tdFormBatch.title.$pristine, 'has-success':tdFormBatch.title.$valid}">
+                <label for="exampleInputEmail1">Batch Title</label>
+                <input type="hidden" ng-if="batch.batch_id" ng-model="batch.batch_id" value="{{batch.id}}">
+                <input type="text" class="form-control" name="title" placeholder="Title" ng-model="batch.title" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group" ng-class="{'has-error':tdFormBatch.course.$invalid && tdFormBatch.course.$dirty,'':tdFormBatch.course.$pristine, 'has-success':tdFormBatch.course.$valid}">
+                <label for="exampleInputEmail1">Course</label>
+                <select  name="course" class="form-control" ng-options="option.course_id as  option.course_name for option in courses "
+                  ng-model="batch.course.course_id" required>
+                    <option value="">Select Course</option>
+                  </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+
+              <div class="form-group" ng-class="{'has-error':tdFormBatch.startdate.$invalid && tdFormBatch.startdate.$dirty,'':tdFormBatch.startdate.$pristine, 'has-success':tdFormBatch.startdate.$valid}">
+                <label for="exampleInputEmail1">Start Date</label>
+                <input type="text" class="form-control" name="startdate" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask placeholder="YYYY-MM-DD" ng-model="batch.start_date" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+
+              <div class="form-group" ng-class="{'has-error':tdFormBatch.enddate.$invalid && tdFormBatch.enddate.$dirty,'':tdFormBatch.enddate.$pristine, 'has-success':tdFormBatch.enddate.$valid}">
+                <label for="exampleInputEmail1">End Date</label>
+                <input type="text" class="form-control" name="enddate" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask placeholder="YYYY-MM-DD" ng-model="batch.end_date" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group" ng-class="{'has-error':tdFormBatch.frequency.$invalid && tdFormBatch.frequency.$dirty,'':tdFormBatch.frequency.$pristine, 'has-success':tdFormBatch.frequency.$valid}">
+                <label for="exampleInputEmail1">Frequency</label>
+                <select  name="frequency" class="form-control" ng-model="batch.frequency" required>
+                    <option value="">Select Status</option>
+                    <option value="weekdays">Weekdays - MON-FRI</option>
+                    <option value="weekend">Weekdays - SAT-SUN</option>
+                  </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group" ng-class="{'has-error':tdFormBatch.starttime.$invalid && tdFormBatch.starttime.$dirty,'':tdFormBatch.starttime.$pristine, 'has-success':tdFormBatch.starttime.$valid}">
+                <label for="exampleInputEmail1">Start Time</label>
+                <input type="text" class="form-control" name="starttime" data-inputmask="'alias': 'hh:mm:ss'" data-mask placeholder="HH:MM:SS" ng-model="batch.start_time" ng-keyup="timedifference(batch.start_time, batch.end_time)"  required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group" ng-class="{'has-error':tdFormBatch.endtime.$invalid && tdFormBatch.endtime.$dirty,'':tdFormBatch.endtime.$pristine, 'has-success':tdFormBatch.endtime.$valid}">
+                <label for="exampleInputEmail1">End Time</label>
+                <input type="text" class="form-control" name="endtime" data-inputmask="'alias': 'hh:mm:ss'" data-mask placeholder="HH:MM:SS" ng-model="batch.end_time" ng-keyup="timedifference(batch.start_time, batch.end_time)" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group" >
+                <label for="exampleInputEmail1">Duration</label>
+                <input type="text" class="form-control" name="duration" placeholder="1 Hr" ng-model="batch.duration" readonly>
+              </div>
+            </div>
+            <div class="col-md-6">
+
+              <div class="form-group" ng-class="{'has-error':tdFormBatch.status.$invalid && tdFormBatch.status.$dirty,'':tdFormBatch.status.$pristine, 'has-success':tdFormBatch.status.$valid}">
+                <label for="exampleInputEmail1">Status</label>
+                <select name="status" class="form-control" ng-model="batch.status" required>
+                    <option value="">Select Status</option>
+                    <option value="Starting">Starting</option>
+                    <option value="Started">Started</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer" ng-if="tdFormBatch.$valid">
+           <button type="submit" ng-if="!batch.id" class="btn btn-primary" ng-click="addBatch(batch)">Add Batch</button>
+           <button type="submit" ng-if="batch.id" class="btn btn-primary" ng-click="updatedBatch(batch)">Update Batch</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

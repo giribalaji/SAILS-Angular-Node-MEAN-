@@ -1,0 +1,80 @@
+<div class="row "  >
+      <div class="col-md-12">
+        <div class="panel panel-default ">
+            <div class="panel-heading">
+                <i class="fa fa-th-list fa-fw"></i> Payment Type
+            </div>
+            <!-- /.panel-heading -->
+            <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Listed Payment Types</h3>
+
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tbody><tr>
+                  <th>ID</th>
+                  <th>Title</th>
+                 
+                  <th>Created At</th>
+                  <th>Updated At</th>
+                </tr>
+                <tr ng-repeat="method in paymentMethods">
+                  <td>{{$index+1}}</td>
+                  <td>{{method.title}}</td>
+                
+                  <td>{{method.createdAt}}</td>
+                  <td>{{method.updatedAt}}</td>
+                </tr>
+               
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+            <!-- /.panel-body -->
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="panel panel-default ">
+            <div class="panel-heading">
+                <i class="fa fa-plus fa-fw"></i> Add Payment Method
+            </div>
+            <!-- /.panel-heading -->
+            <div class="box">
+                <div class="box-header">
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body ">
+                  <form role="form" name="tdFormPaymentMethod" novalidate>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group" ng-class="{'has-error':tdFormPaymentMethod.title.$invalid && tdFormPaymentMethod.title.$dirty,'':tdFormPaymentMethod.title.$pristine, 'has-success':tdFormPaymentMethod.title.$valid}">
+                                <input type="text" class="form-control" name="title" placeholder="Title" ng-model="paymentMethod.title" required>
+                            </div>
+                        </div>                        
+                        <div class="col-md-3">
+                          <!-- /.box-body -->
+                            <div class="form-group" >
+                               <button type="submit" ng-disabled="!tdFormPaymentMethod.$valid" class="btn btn-primary " ng-click="addPaymentMethod(paymentMethod)">Add Batch</button>
+                            </div>
+                        </div>
+                    </div>
+
+                  </form>
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+</div>

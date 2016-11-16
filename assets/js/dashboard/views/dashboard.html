@@ -1,0 +1,221 @@
+
+<div class="row">
+    <!-- Total Student Registered -->
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" >
+      <!-- small box -->
+      <div class="small-box bg-aqua">
+        <div class="inner">
+          <h3>{{dashboard.summary.count.student}}</h3>
+          <p>Student Registered</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-graduation-cap"></i>
+        </div>
+        <a href="#/student" class="small-box-footer">
+          More info <i class="fa fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+    <!-- Total Student Registered -->
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" >
+      <!-- small box -->
+      <div class="small-box bg-aqua">
+        <div class="inner">
+          <h3>{{dashboard.summary.count.courses}}</h3>
+
+          <p>Courses Offered</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-book"></i>
+        </div>
+        <a href="#/course" class="small-box-footer">
+          More info <i class="fa fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+    <!-- Total Student Registered -->
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" >
+      <!-- small box -->
+      <div class="small-box bg-aqua">
+        <div class="inner">
+          <h3>{{dashboard.summary.count.batch}}</h3>
+
+          <p>Batch Formed</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-bookmark-o"></i>
+        </div>
+        <a href="#/batch" class="small-box-footer">
+          More info <i class="fa fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+    <!-- Total Student Registered -->
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" >
+      <!-- small box -->
+      <div class="small-box bg-aqua">
+        <div class="inner">
+          <h3> {{dashboard.summary.sum.fee_total | currency:"₹"}} </h3>
+
+          <p>Fees Total</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-inr"></i>
+        </div>
+        <a href="#/payment" class="small-box-footer">
+          More info <i class="fa fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+
+
+</div>
+<!-- /.row -->
+<div class="row">
+    <!-- /.col-lg-8 -->
+    <div class="col-md-6">
+        <div class="panel panel-info ">
+            <div class="panel-heading">
+                <i class="fa fa-th-list fa-fw"></i> Recently Added Student
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th> Name</th>
+                                <th>Gender</th>
+                                <th>Email</th>
+                                <th> Admission Date</th>
+                                <th> Mobile No</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="student in dashboard.students">
+                                <td>{{$index+1}}</td>
+                                <td><a href="#/student/{{student.id}}">{{student.stu_first_name}} {{student.stu_middle_name}} {{student.stu_last_name}}</a></td>
+                                <td>{{student.stu_gender}}</td>
+                                <td>{{student.stu_email_id}}</td>
+                                <td>{{student.stu_admission_date | date:'MM/dd/yyyy'}}</td>
+                                <td>{{student.stu_mobile_no}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    
+    <!--  -->
+    <div class="col-md-6">
+        <div class="panel panel-info ">
+            <div class="panel-heading">
+                <i class="fa fa-th-list fa-fw"></i> Recent  Batches
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th> Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th> Frequency</th>
+                                <th> Timing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="batch in dashboard.batches">
+                                <td>{{$index+1}}</td>
+                                <td><a href="#/student/{{student.id}}">{{batch.title}}</a></td>
+                                <td>{{batch.start_date | date:'MM/dd/yyyy'}} </td>
+                                <td>{{batch.end_date | date:'MM/dd/yyyy'}} </td>
+                                <td>{{batch.frequency}}</td>
+                                <td>{{batch.start_time}} - {{batch.end_time}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    <!--  -->
+    <div class="col-md-6">
+        <div class="panel panel-info ">
+            <div class="panel-heading">
+                <i class="fa fa-th-list fa-fw"></i> Recent Fee Collection
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Student</th>
+                                <th>Amount</th>
+                                <th>Via</th>
+                                <th> By</th>
+                                <th> Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="payment in dashboard.payments">
+                                <td>{{$index+1}}</td>
+                                <td><a href="#/student/{{student.id}}">{{payment.student.stu_first_name}} {{payment.student.stu_middle_name}} {{payment.student.stu_last_name}}</a></td>
+                                <td>{{payment.amount}}</td>
+                                <td>{{payment.method.title}}</td>
+                                <td>{{payment.type.title}}</td>
+                                <td>{{payment.payment_date | date:'MM/dd/yyyy'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    <!-- Dues -->
+    <div class="col-md-6">
+        <div class="panel panel-info ">
+            <div class="panel-heading">
+                <i class="fa fa-th-list fa-fw"></i> Last Dues
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Student</th>
+                                <th>Fee Total</th>
+                                <th>Fee Paid</th>
+                                <th>Fee Due</th>
+                                <th>Due Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="due in dashboard.dues">
+                                <td>{{$index+1}}</td>
+                                <td><a href="#/student/{{student.id}}">{{due.stu_first_name}} {{due.stu_middle_name}} {{due.stu_last_name}}</a></td>
+                                <td>{{due.fee_total}}</td>
+                                <td>{{due.fee_paid}}</td>
+                                <td>{{due.fee_due}}</td>
+                                <td>{{due.fee_due_date | date:'MM/dd/yyyy'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+</div>
+<!-- /.row
